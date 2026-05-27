@@ -4,6 +4,20 @@ Production-ready Maven dependency visualization for **VS Code / Cursor**.
 
 MavenScope combines a VS Code extension, a standalone Java analysis engine, and a modern React webview UI to explore declared vs resolved dependencies, conflicts, and mediation results.
 
+## Preview
+
+<p align="center">
+  <img src="doc/images/demo.gif" alt="MavenScope demo — dependency hierarchy and resolved dependencies in VS Code / Cursor" width="900">
+</p>
+
+*Walkthrough: open a Maven project, run **MavenScope: Open Dependency Viewer**, search and sync between the hierarchy tree and the resolved list.*
+
+<p align="center">
+  <img src="doc/images/dark-theme.png" alt="MavenScope dark theme — search, scope badges, and managed versions" width="900">
+</p>
+
+*Dark theme — follows your editor color theme by default, or switch with the toolbar toggle (choice persists per panel).*
+
 ## Architecture
 
 ```
