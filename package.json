@@ -1,5 +1,6 @@
 {
   "name": "mavenscope",
+  "publisher": "erikchaupis",
   "private": true,
   "description": "MavenScope monorepo — VS Code extension, Java engine, and React webview UI.",
   "version": "0.0.1",
