@@ -2,7 +2,7 @@
   "name": "mavenscope",
   "displayName": "MavenScope",
   "description": "Modern Maven dependency hierarchy and conflict visualization for VS Code and Cursor.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "erikchaupis",
   "license": "Apache-2.0",
   "icon": "media/mavenscope-icon.png",

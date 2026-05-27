@@ -1,13 +1,49 @@
-# TypeScript sources (runtime code is in out/)
+# Source files
 src/**
-
-# Source maps
+**/*.ts
+**/*.tsx
 **/*.map
 
-# Tooling
+# Development configs
 tsconfig.json
+vite.config.*
+webpack.config.*
+eslint.config.*
+.prettierrc*
+.editorconfig
 
-# OS / editor
-**/.DS_Store
+# Tests
+test/**
+tests/**
+coverage/**
+
+# Git / editor
+.git/**
+.github/**
 .vscode/**
 .vscode-test/**
+.idea/**
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node modules (keep packaged dependencies only)
+node_modules/**/.cache/**
+
+# Monorepo parents (VERY IMPORTANT)
+../**
+../../**
+
+# Maven build files outside extension
+pom.xml
+../pom.xml
+../engine/**
+../ui/**
+../shared/**
+
+# Local artifacts
+*.vsix
+
+# Docs not needed
+docs/**
