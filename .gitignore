@@ -1,0 +1,14 @@
+node_modules/
+dist/
+out/
+*.vsix
+.DS_Store
+engine/target/
+*.class
+*.jar
+!engine/target/dependency-engine.jar
+.vscode-test/
+ui/.vite/
+extension/out/
+extension/media/ui/
+extension/engine/

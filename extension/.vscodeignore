@@ -1,0 +1,13 @@
+# TypeScript sources (runtime code is in out/)
+src/**
+
+# Source maps
+**/*.map
+
+# Tooling
+tsconfig.json
+
+# OS / editor
+**/.DS_Store
+.vscode/**
+.vscode-test/**

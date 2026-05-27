@@ -1,0 +1,137 @@
+{
+  "name": "mavenscope",
+  "displayName": "MavenScope",
+  "description": "Modern Maven dependency hierarchy and conflict visualization for VS Code and Cursor.",
+  "version": "0.0.1",
+  "publisher": "erikchaupis",
+  "license": "Apache-2.0",
+  "icon": "media/mavenscope-icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "maven",
+    "java",
+    "dependency-tree",
+    "spring",
+    "visualization",
+    "dependencies",
+    "conflicts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikchaupis/mavenscope"
+  },
+  "homepage": "https://github.com/erikchaupis/mavenscope",
+  "bugs": {
+    "url": "https://github.com/erikchaupis/mavenscope/issues"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mavenscope.openDependencyViewer",
+        "title": "MavenScope: Open Dependency Viewer",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "mavenscope.refreshAnalysis",
+        "title": "MavenScope: Refresh Analysis",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "mavenscope.analyzeWorkspace",
+        "title": "MavenScope: Analyze Workspace Project"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mavenscope",
+          "title": "MavenScope",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "mavenscope": [
+        {
+          "id": "mavenscope.projects",
+          "name": "Maven Projects"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "mavenscope.refreshAnalysis",
+          "when": "view == mavenscope.projects",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "mavenscope.openDependencyViewer",
+          "when": "resourceFilename == pom.xml",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mavenscope.openDependencyViewer"
+        },
+        {
+          "command": "mavenscope.analyzeWorkspace"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MavenScope",
+      "properties": {
+        "mavenscope.javaPath": {
+          "type": "string",
+          "default": "java",
+          "description": "Path to Java executable used to run the analysis engine."
+        },
+        "mavenscope.enginePath": {
+          "type": "string",
+          "default": "",
+          "description": "Optional override path to dependency-engine.jar. Leave empty to use bundled engine."
+        },
+        "mavenscope.devUiPort": {
+          "type": "number",
+          "default": 5173,
+          "description": "Vite dev server port for webview hot reload during extension development."
+        },
+        "mavenscope.useDevUi": {
+          "type": "boolean",
+          "default": false,
+          "description": "Load webview UI from Vite dev server instead of bundled assets."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "bash ../scripts/build-all.sh",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "clean": "rm -rf out media/ui engine",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@mavenscope/shared": "*"
+  }
+}

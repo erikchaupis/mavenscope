@@ -1,0 +1,20 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.maven.enabled": true,
+  "java.import.maven.offline.enabled": false,
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "java.project.resourceFilters": [
+    "node_modules",
+    ".git",
+    "ui",
+    "extension",
+    "shared",
+    "fixtures"
+  ],
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
+}

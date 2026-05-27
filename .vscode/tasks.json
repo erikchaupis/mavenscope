@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "mavenscope: build dev assets",
+      "type": "shell",
+      "command": "bash scripts/dev.sh && npm run watch:extension",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "mavenscope: build all",
+      "type": "shell",
+      "command": "bash scripts/build-all.sh",
+      "group": "build"
+    }
+  ]
+}

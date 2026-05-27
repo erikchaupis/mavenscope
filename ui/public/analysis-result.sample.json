@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "groupId": "com.example",
+    "artifactId": "demo-app",
+    "version": "1.0.0",
+    "packaging": "jar",
+    "name": "Demo Application"
+  },
+  "declaredTree": {
+    "id": "root",
+    "coordinates": {
+      "groupId": "com.example",
+      "artifactId": "demo-app",
+      "version": "1.0.0",
+      "type": "jar"
+    },
+    "scope": "compile",
+    "optional": false,
+    "role": "root",
+    "depth": 0,
+    "exclusions": [],
+    "resolvedVersion": "1.0.0",
+    "children": [
+      {
+        "id": "com.example:lib-a:2.0.0",
+        "coordinates": {
+          "groupId": "com.example",
+          "artifactId": "lib-a",
+          "version": "2.0.0",
+          "type": "jar"
+        },
+        "scope": "compile",
+        "optional": false,
+        "role": "declared",
+        "depth": 1,
+        "exclusions": [],
+        "resolvedVersion": "2.0.0",
+        "children": []
+      }
+    ]
+  },
+  "resolvedTree": {
+    "id": "root",
+    "coordinates": {
+      "groupId": "com.example",
+      "artifactId": "demo-app",
+      "version": "1.0.0",
+      "type": "jar"
+    },
+    "scope": "compile",
+    "optional": false,
+    "role": "root",
+    "depth": 0,
+    "exclusions": [],
+    "resolvedVersion": "1.0.0",
+    "conflictWinner": true,
+    "children": [
+      {
+        "id": "com.example:lib-a:1.5.0",
+        "coordinates": {
+          "groupId": "com.example",
+          "artifactId": "lib-a",
+          "version": "1.5.0",
+          "type": "jar"
+        },
+        "scope": "compile",
+        "optional": false,
+        "role": "declared",
+        "depth": 1,
+        "exclusions": [],
+        "requestedVersion": "2.0.0",
+        "resolvedVersion": "1.5.0",
+        "conflictWinner": true,
+        "mediation": {
+          "strategy": "nearest-wins",
+          "winnerVersion": "1.5.0",
+          "loserVersions": ["2.0.0"],
+          "explanation": "Version 1.5.0 was selected via nearest-wins mediation; declared 2.0.0 was overridden by a closer dependency path."
+        },
+        "children": []
+      }
+    ]
+  },
+  "conflicts": [
+    {
+      "id": "conflict-lib-a",
+      "kind": "version",
+      "coordinates": {
+        "groupId": "com.example",
+        "artifactId": "lib-a"
+      },
+      "winner": {
+        "groupId": "com.example",
+        "artifactId": "lib-a",
+        "version": "1.5.0"
+      },
+      "losers": [
+        {
+          "groupId": "com.example",
+          "artifactId": "lib-a",
+          "version": "2.0.0"
+        }
+      ],
+      "mediation": {
+        "strategy": "nearest-wins",
+        "winnerVersion": "1.5.0",
+        "loserVersions": ["2.0.0"],
+        "explanation": "Nearest-wins: shorter path to 1.5.0 won over declared 2.0.0."
+      },
+      "paths": [
+        ["com.example:demo-app:1.0.0", "com.example:lib-b:1.0.0", "com.example:lib-a:1.5.0"],
+        ["com.example:demo-app:1.0.0", "com.example:lib-a:2.0.0"]
+      ]
+    }
+  ],
+  "metadata": {
+    "analyzedAt": "2026-05-26T12:00:00.000Z",
+    "projectPath": "/path/to/project",
+    "mavenVersion": "3.9.9",
+    "resolverVersion": "1.9.22",
+    "durationMs": 842,
+    "moduleCount": 1,
+    "warnings": []
+  }
+}

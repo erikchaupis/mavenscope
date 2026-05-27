@@ -1,0 +1,31 @@
+{
+  "name": "mavenscope",
+  "private": true,
+  "description": "MavenScope monorepo — VS Code extension, Java engine, and React webview UI.",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikchaupis/mavenscope"
+  },
+  "workspaces": [
+    "shared",
+    "extension",
+    "ui"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build -w shared",
+    "build:ui": "npm run build -w ui",
+    "build:extension": "npm run build -w extension",
+    "build:engine": "mvn -q package -pl engine -am -DskipTests",
+    "build:all": "bash scripts/build-all.sh",
+    "dev:ui": "npm run dev -w ui",
+    "watch:extension": "npm run watch -w extension",
+    "package:extension": "npm run package -w extension",
+    "clean": "npm run clean --workspaces --if-present && mvn -q clean -pl engine"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
